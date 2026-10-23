@@ -243,8 +243,9 @@ footer strong { color: var(--ink); font-family: var(--display); font-weight: 400
   <div class="wrap">
     <a class="brand" href="#top" aria-label="The Small-Places Conference, home">
       <svg viewBox="0 0 40 40" aria-hidden="true">
+        <defs><clipPath id="brand-clip"><circle cx="20" cy="20" r="19"/></clipPath></defs>
         <circle cx="20" cy="20" r="19" fill="var(--pine)"/>
-        <path d="M3 27 C 10 23, 15 25, 20 23 C 26 21, 31 24, 37 22 L37 30 C 33 36, 7 36, 3 30 Z" fill="var(--paper)" opacity=".28"/>
+        <path clip-path="url(#brand-clip)" d="M0 27 C 10 23, 15 25, 20 23 C 26 21, 31 24, 40 22 V40 H0 Z" fill="var(--paper)" opacity=".28"/>
         <path d="M17 23 V14 L20 8 L23 14 V23 Z" fill="var(--paper)"/>
         <rect x="19" y="16.5" width="2" height="3" fill="var(--window)"/>
       </svg>
