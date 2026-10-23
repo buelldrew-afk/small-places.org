@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- head:end-of-document-wrapper -->
+<title>The Small-Places Conference</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A one-day conference in Cool, California, on January 20, 2027, to encourage those who minister in small places.">
+<meta property="og:title" content="The Small-Places Conference · January 20, 2027">
+<meta property="og:description" content="A one-day conference in Cool, California, to encourage those who minister in small places. $25.">
+<meta property="og:image" content="https://small-places.org/img/share.png">
+<meta property="og:url" content="https://small-places.org/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: a foothill landscape opens the page; below it, a left-aligned field-guide scroll with a two-track timetable at its center. */
+:root {
+  --paper: #eef0e7;      /* lichen paper */
+  --paper-2: #e3e7da;    /* a shade deeper, for bands */
+  --ink: #1b2620;        /* pine-black */
+  --ink-2: #4a5a50;      /* secondary text */
+  --pine: #2d4a3b;       /* the conference green */
+  --gold: #b9812a;       /* lantern / dry-grass gold */
+  --gold-ink: #8a5d17;   /* gold dark enough for text on paper */
+  --rule: #c9d0bf;
+  --card: #f7f8f2;
+  --on-pine: #eef0e7;
+
+  /* landscape */
+  --sky-top: #f3dcae;
+  --sky-bot: #f7ecd2;
+  --ridge-1: #b7c2a6;
+  --ridge-2: #8ea183;
+  --ridge-3: #5f7a62;
+  --ridge-4: #2d4a3b;
+  --chapel: #fbfaf4;
+  --chapel-roof: #26332b;
+  --window: #e9a93a;
+  --stars: 0;
+  --hero-fg: #1b2620;
+
+  --display: "Gloock", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.65rem;
+  --step-3: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
+  --step-4: clamp(2.6rem, 1.6rem + 4.5vw, 4.6rem);
+  --measure: 65ch;
+  --wrap: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111914; --paper-2: #17211b; --ink: #e5eadf; --ink-2: #a9b6aa; --pine: #9fc0a9;
+    --gold: #e0a64a; --gold-ink: #e8b664; --rule: #2a3a30; --card: #18231c; --on-pine: #111914;
+    --sky-top: #0c1420; --sky-bot: #1d2a33; --ridge-1: #2a3a40; --ridge-2: #213129; --ridge-3: #182620; --ridge-4: #0f1813;
+    --chapel: #c9cfc4; --chapel-roof: #0b110d; --window: #f4b54a; --stars: 1; --hero-fg: #eef0e7;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111914; --paper-2: #17211b; --ink: #e5eadf; --ink-2: #a9b6aa; --pine: #9fc0a9;
+  --gold: #e0a64a; --gold-ink: #e8b664; --rule: #2a3a30; --card: #18231c; --on-pine: #111914;
+  --sky-top: #0c1420; --sky-bot: #1d2a33; --ridge-1: #2a3a40; --ridge-2: #213129; --ridge-3: #182620; --ridge-4: #0f1813;
+  --chapel: #c9cfc4; --chapel-roof: #0b110d; --window: #f4b54a; --stars: 1; --hero-fg: #eef0e7;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.1; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); }
+.section { padding-block: clamp(56px, 8vw, 104px); }
+.section-head { display: grid; gap: 12px; margin-bottom: clamp(28px, 4vw, 48px); max-width: var(--measure); }
+.section-head h2 { font-size: var(--step-3); }
+.section-head p { color: var(--ink-2); }
+
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1.5px solid transparent; transition: transform .15s ease, background .15s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--pine); color: var(--on-pine); }
+.btn-ghost { border-color: currentColor; }
+
+/* Header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.site-header .wrap { display: flex; align-items: center; gap: 20px; padding-block: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-size: 1.15rem; white-space: nowrap; }
+.brand svg { width: 34px; height: 34px; flex: none; }
+.nav { display: flex; gap: 22px; margin-left: auto; font-size: 0.92rem; font-weight: 500; }
+.nav a { text-decoration: none; color: var(--ink-2); }
+.nav a:hover { color: var(--ink); }
+.site-header .btn { padding: 8px 16px; }
+@media (max-width: 760px) { .nav { display: none; } .site-header .btn { margin-left: auto; } }
+@media (max-width: 380px) { .brand span { font-size: 1rem; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; color: var(--hero-fg); background: var(--sky-bot); }
+.hero svg.land { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero .wrap { position: relative; padding-block: clamp(48px, 7vw, 96px) clamp(220px, 26vw, 340px); }
+.hero-copy { display: grid; gap: 18px; max-width: 34rem; }
+.hero h1 { font-size: var(--step-4); letter-spacing: -0.01em; }
+.hero h1 em { font-style: normal; color: var(--gold-ink); }
+.hero .verse { font-size: 1.05rem; max-width: 30rem; }
+.hero .verse cite { display: block; font-style: normal; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; margin-top: 4px; opacity: .8; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.stars circle { opacity: var(--stars); }
+.window-glow { animation: glow 5s ease-in-out infinite; }
+@keyframes glow { 50% { opacity: .55; } }
+
+/* Facts */
+.facts { background: var(--pine); color: var(--on-pine); }
+.facts dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
+.facts div { padding: 22px 20px 22px 0; display: grid; gap: 2px; }
+.facts div + div { padding-left: 20px; border-left: 1px solid color-mix(in srgb, var(--on-pine) 22%, transparent); }
+.facts dt { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: .75; }
+.facts dd { margin: 0; font-family: var(--display); font-size: 1.3rem; line-height: 1.25; }
+.facts dd small { display: block; font-family: var(--body); font-size: 0.85rem; opacity: .8; }
+@media (max-width: 820px) { .facts dl { grid-template-columns: 1fr 1fr; } .facts div:nth-child(3) { padding-left: 0; border-left: 0; } .facts div:nth-child(n+3) { border-top: 1px solid color-mix(in srgb, var(--on-pine) 22%, transparent); } }
+@media (max-width: 440px) { .facts dl { grid-template-columns: 1fr; } .facts div, .facts div + div { padding-left: 0; border-left: 0; } .facts div + div { border-top: 1px solid color-mix(in srgb, var(--on-pine) 22%, transparent); } }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+.about h2 { font-size: var(--step-3); margin-top: 12px; }
+.about .lede { display: grid; gap: 16px; color: var(--ink-2); max-width: var(--measure); }
+.about .lede p:first-child { color: var(--ink); font-size: 1.15rem; }
+.pillars { display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.pillars div { display: grid; gap: 4px; padding-block: 18px; border-bottom: 1px solid var(--rule); }
+.pillars h3 { font-size: var(--step-1); }
+.pillars p { color: var(--ink-2); font-size: 0.97rem; }
+@media (max-width: 820px) { .about { grid-template-columns: 1fr; } }
+
+/* Schedule */
+.schedule-band { background: var(--paper-2); }
+.timetable { display: grid; grid-template-columns: 88px minmax(0, 1fr) minmax(0, 1fr); border-top: 2px solid var(--ink); }
+.tt-head { display: contents; }
+.tt-head span { padding: 12px 16px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--rule); }
+.tt-head span:first-child { padding-left: 0; }
+.time { padding: 18px 12px 18px 0; font-variant-numeric: tabular-nums; font-weight: 600; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+.slot { padding: 18px 16px; border-bottom: 1px solid var(--rule); display: grid; gap: 4px; align-content: start; min-width: 0; }
+.slot.span { grid-column: span 2; }
+.slot.plenary { background: var(--card); border-left: 3px solid var(--gold); }
+.slot.meal { color: var(--ink-2); }
+.slot .kind { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); }
+.slot h3 { font-size: 1.3rem; }
+.slot.plenary h3 { font-size: var(--step-2); }
+.slot .who { font-size: 0.95rem; color: var(--ink-2); }
+.slot .track-label { display: none; }
+.time.spacer { display: none; }
+.tt-note { margin-top: 18px; font-size: 0.9rem; color: var(--ink-2); }
+@media (max-width: 720px) {
+  .timetable { grid-template-columns: 64px minmax(0, 1fr); }
+  .tt-head { display: none; }
+  .slot.span { grid-column: auto; }
+  .slot.track-w { grid-column: 2; border-top: 0; }
+  .time.spacer { display: block; border-bottom: 0; padding: 0; }
+  .slot .track-label { display: block; }
+  .slot.track-m { border-bottom-style: dashed; }
+}
+
+/* Speakers */
+.plenary-speakers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); margin-bottom: 48px; }
+.speaker-lg { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 20px; align-items: start; }
+.portrait { aspect-ratio: 4/5; width: 100%; max-width: 100%; border-radius: 4px; object-fit: cover; background: var(--paper-2); display: grid; place-items: center; font-family: var(--display); font-size: 2rem; color: var(--pine); border: 1px solid var(--rule); }
+.speaker-lg .eyebrow { margin-bottom: 4px; }
+.speaker-lg h3 { font-size: var(--step-2); }
+.speaker-lg .talk { font-weight: 600; margin: 6px 0 8px; }
+.speaker-lg p.bio { color: var(--ink-2); font-size: 0.95rem; }
+.speaker-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; }
+.speaker { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 14px; align-items: start; }
+.speaker h3 { font-size: 1.2rem; }
+.speaker .talk { font-size: 0.92rem; color: var(--ink-2); }
+.speaker .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+.speaker .portrait { font-size: 1.4rem; }
+.worship { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; }
+.worship strong { font-family: var(--display); font-weight: 400; font-size: 1.3rem; }
+@media (max-width: 900px) { .speaker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .plenary-speakers { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .speaker-grid { grid-template-columns: 1fr; } .speaker-lg { grid-template-columns: 96px minmax(0, 1fr); } }
+
+/* Journal */
+.journal-band { background: var(--pine); color: var(--on-pine); }
+.journal-band .eyebrow { color: var(--gold); }
+.journal-band .section-head p { color: color-mix(in srgb, var(--on-pine) 80%, transparent); }
+.articles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid color-mix(in srgb, var(--on-pine) 30%, transparent); }
+.article { display: grid; gap: 10px; align-content: start; padding: 24px 24px 28px 0; border-bottom: 1px solid color-mix(in srgb, var(--on-pine) 30%, transparent); text-decoration: none; }
+.article:not(:nth-child(3n+1)) { padding-left: 24px; border-left: 1px solid color-mix(in srgb, var(--on-pine) 30%, transparent); }
+.article h3 { font-size: 1.45rem; }
+.article p { font-size: 0.95rem; color: color-mix(in srgb, var(--on-pine) 80%, transparent); }
+.article .by { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+.journal-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.journal-band .btn-primary { background: var(--on-pine); color: var(--pine); }
+@media (max-width: 900px) { .articles { grid-template-columns: 1fr 1fr; } .article:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; } .article:nth-child(even) { padding-left: 24px; border-left: 1px solid color-mix(in srgb, var(--on-pine) 30%, transparent); } }
+@media (max-width: 600px) { .articles { grid-template-columns: 1fr; } .article:nth-child(even) { padding-left: 0; border-left: 0; } }
+
+/* Register + FAQ */
+.register { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 80px); }
+.price-card { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 28px; display: grid; gap: 14px; align-content: start; }
+.price { font-family: var(--display); font-size: 4rem; line-height: 1; color: var(--pine); }
+.price small { font-family: var(--body); font-size: 1rem; color: var(--ink-2); }
+.price-card ul { margin: 0; padding-left: 1.1em; color: var(--ink-2); display: grid; gap: 4px; }
+.price-card .soon { font-size: 0.88rem; color: var(--ink-2); }
+details { border-bottom: 1px solid var(--rule); }
+details:first-of-type { border-top: 1px solid var(--rule); }
+summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font-weight: 600; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font-family: var(--display); font-size: 1.5rem; color: var(--gold-ink); }
+details[open] summary::after { content: "–"; }
+details p { padding-bottom: 18px; color: var(--ink-2); max-width: var(--measure); }
+@media (max-width: 820px) { .register { grid-template-columns: 1fr; } }
+
+/* Hosts + footer */
+.hosts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.hosts div { display: grid; gap: 6px; align-content: start; }
+.hosts h3 { font-size: 1.15rem; }
+.hosts p { font-size: 0.9rem; color: var(--ink-2); }
+@media (max-width: 900px) { .hosts { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .hosts { grid-template-columns: 1fr; } }
+footer { border-top: 1px solid var(--rule); padding-block: 36px 48px; font-size: 0.92rem; color: var(--ink-2); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 40px; justify-content: space-between; }
+footer strong { color: var(--ink); font-family: var(--display); font-weight: 400; font-size: 1.1rem; display: block; }
+.select { user-select: all; }
+.article.soon { cursor: default; }
+.article.soon .by::after { content: " · Coming soon"; color: color-mix(in srgb, var(--on-pine) 60%, transparent); }
+.article .date { font-size: 0.8rem; color: color-mix(in srgb, var(--on-pine) 65%, transparent); }
+</style>
+<!-- body:start-of-document-wrapper -->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="The Small-Places Conference, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="var(--pine)"/>
+        <path d="M3 27 C 10 23, 15 25, 20 23 C 26 21, 31 24, 37 22 L37 30 C 33 36, 7 36, 3 30 Z" fill="var(--paper)" opacity=".28"/>
+        <path d="M17 23 V14 L20 8 L23 14 V23 Z" fill="var(--paper)"/>
+        <rect x="19" y="16.5" width="2" height="3" fill="var(--window)"/>
+      </svg>
+      <span>Small-Places</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#journal">Articles</a>
+      <a href="#register">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://subsplash.com/coolcommunitychurch/lb/ev/+xmvn4n2/register" target="_blank" rel="noopener">Register</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <svg class="land" viewBox="0 -240 1440 880" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--sky-top)"/>
+          <stop offset="1" stop-color="var(--sky-bot)"/>
+        </linearGradient>
+        <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="var(--window)" stop-opacity=".55"/>
+          <stop offset="1" stop-color="var(--window)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect y="-240" width="1440" height="880" fill="url(#sky)"/>
+      <g class="stars" fill="#f2efe2">
+        <circle cx="820" cy="70" r="1.4"/><circle cx="960" cy="120" r="1"/><circle cx="1100" cy="60" r="1.6"/><circle cx="1240" cy="140" r="1.1"/><circle cx="1350" cy="80" r="1.3"/><circle cx="700" cy="150" r="1"/><circle cx="1180" cy="210" r="1"/><circle cx="1010" cy="200" r="1.2"/><circle cx="1390" cy="220" r="1"/><circle cx="890" cy="240" r=".9"/>
+      </g>
+      <path d="M0 400 C 200 360, 360 372, 520 344 C 700 312, 860 360, 1040 330 C 1200 306, 1320 340, 1440 318 V640 H0 Z" fill="var(--ridge-1)"/>
+      <path d="M0 450 C 180 420, 300 444, 460 414 C 640 380, 760 424, 960 402 C 1140 382, 1280 412, 1440 392 V640 H0 Z" fill="var(--ridge-2)"/>
+      <path d="M0 520 C 220 488, 420 506, 640 486 C 760 476, 840 466, 900 466 C 980 466, 1060 478, 1160 486 C 1280 494, 1360 488, 1440 480 V640 H0 Z" fill="var(--ridge-3)"/>
+      <!-- the chapel: small on purpose -->
+      <g transform="translate(884 466)">
+        <circle cx="10" cy="-12" r="30" fill="url(#glow)" class="window-glow"/>
+        <rect x="-2" y="-14" width="30" height="14" fill="var(--chapel)"/>
+        <path d="M-4 -14 L13 -24 L30 -14 Z" fill="var(--chapel-roof)"/>
+        <rect x="-12" y="-24" width="10" height="24" fill="var(--chapel)"/>
+        <path d="M-14 -24 L-7 -42 L0 -24 Z" fill="var(--chapel-roof)"/>
+        <rect x="-8.5" y="-46" width="3" height="5" fill="var(--chapel-roof)"/>
+        <rect x="9" y="-10" width="4" height="6" fill="var(--window)" class="window-glow"/>
+        <rect x="17" y="-10" width="4" height="6" fill="var(--window)" class="window-glow"/>
+        <rect x="-9" y="-8" width="4" height="8" fill="var(--chapel-roof)"/>
+      </g>
+      <!-- oaks and pines on the near ridge -->
+      <g fill="var(--ridge-4)">
+        <path d="M820 470 l9 -30 l9 30 Z"/><path d="M836 472 l7 -22 l7 22 Z"/>
+        <circle cx="950" cy="458" r="14"/><circle cx="964" cy="462" r="11"/><rect x="954" y="460" width="3" height="12"/>
+        <path d="M990 476 l10 -34 l10 34 Z"/><path d="M1008 478 l7 -24 l7 24 Z"/>
+        <circle cx="1210" cy="478" r="16"/><circle cx="1228" cy="482" r="12"/>
+        <circle cx="300" cy="500" r="15"/><circle cx="318" cy="504" r="11"/>
+        <path d="M120 512 l9 -30 l9 30 Z"/>
+      </g>
+      <path d="M0 600 C 240 572, 520 590, 760 576 C 1000 562, 1240 584, 1440 570 V640 H0 Z" fill="var(--ridge-4)"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Cool, California · January 20, 2027</span>
+        <h1 id="hero-title">The Small&#8209;Places Conference</h1>
+        <p class="verse">“Well done, good and faithful servant. You have been faithful over a little; I will set you over much.”<cite>Matthew 25:21</cite></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://subsplash.com/coolcommunitychurch/lb/ev/+xmvn4n2/register" target="_blank" rel="noopener">Register · $25</a>
+          <a class="btn btn-ghost" href="#schedule">See the schedule</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Conference details">
+    <div class="wrap">
+      <dl>
+        <div><dt>When</dt><dd>Wednesday, January 20, 2027<small>Breakfast from 8:30 am</small></dd></div>
+        <div><dt>Where</dt><dd>Cool Community Church<small>863 Cave Valley Rd, Cool, CA</small></dd></div>
+        <div><dt>Cost</dt><dd>$25 per person<small>Register online</small></dd></div>
+        <div><dt>Can’t come?</dt><dd>Watch the livestream<small>On the church’s Facebook page</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about">
+      <div>
+        <span class="eyebrow">About the conference</span>
+        <h2>A conference to encourage those who minister in small places.</h2>
+      </div>
+      <div class="lede">
+        <p>Cool is a very small place, about 2,500 people in the Sierra foothills. Most churches in America look a lot more like ours than like the ones you hear about at the big conferences.</p>
+        <p>It would seem disingenuous to host a conference on small places and then bring in a big name to wow everyone. So we ask pastors and ministry wives who serve in small places to open God’s Word and encourage one another.</p>
+        <div class="pillars">
+          <div><h3>One day, on a Wednesday</h3><p>Many pastors set Saturday aside for family. We won’t ask you to give it up.</p></div>
+          <div><h3>A men’s track and a women’s track</h3><p>Two plenary sessions for everyone, and three breakout seminars in each track.</p></div>
+          <div><h3>Small places everywhere</h3><p>Rural towns, mountain churches, and small congregations in big cities are all welcome.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section schedule-band" id="schedule">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Schedule</span>
+        <h2>The day at a glance</h2>
+        <p>Worship led by Corey Milican and Charles Brown.</p>
+      </div>
+      <div class="timetable" role="table" aria-label="Conference schedule">
+        <div class="tt-head" role="row"><span role="columnheader">Time</span><span role="columnheader">Men’s track</span><span role="columnheader">Women’s track</span></div>
+
+        <div class="time" role="cell">8:30</div>
+        <div class="slot span meal" role="cell"><h3>Continental breakfast</h3></div>
+
+        <div class="time" role="cell">9:00</div>
+        <div class="slot span plenary" role="cell"><span class="kind">Plenary session</span><h3>The Glory of Ordinary Faithfulness</h3><span class="who">Tony Arnds</span></div>
+
+        <div class="time" role="cell">11:00</div>
+        <div class="slot track-m" role="cell"><span class="kind track-label">Men’s track</span><h3>Rethinking Assimilation: How to Actually Keep the People Who Show Up</h3><span class="who">Drew Buell</span></div>
+        <div class="time spacer" aria-hidden="true"></div>
+        <div class="slot track-w" role="cell"><span class="kind track-label">Women’s track</span><h3>Contentment in a Comparison Culture: Finding Satisfaction in the Life God Gave You</h3><span class="who">Tawny Arnds</span></div>
+
+        <div class="time" role="cell">12:30</div>
+        <div class="slot span meal" role="cell"><h3>Lunch</h3></div>
+
+        <div class="time" role="cell">1:30</div>
+        <div class="slot track-m" role="cell"><span class="kind track-label">Men’s track</span><h3>A Practical Way to Memorize Large Portions of Scripture</h3><span class="who">Max Vusik</span></div>
+        <div class="time spacer" aria-hidden="true"></div>
+        <div class="slot track-w" role="cell"><span class="kind track-label">Women’s track</span><h3>When Hard Things Don’t Get Better: Faith and Suffering for the Long Haul</h3><span class="who">Kerstin Fletcher</span></div>
+
+        <div class="time" role="cell">3:00</div>
+        <div class="slot track-m" role="cell"><span class="kind track-label">Men’s track</span><h3>Ministering to Those With Disabilities in Small Places</h3><span class="who">Cliff Peppers</span></div>
+        <div class="time spacer" aria-hidden="true"></div>
+        <div class="slot track-w" role="cell"><span class="kind track-label">Women’s track</span><h3>The Tongue and the Heart: Biblical Communication in Relationships</h3><span class="who">Lori Stover</span></div>
+
+        <div class="time" role="cell">4:00</div>
+        <div class="slot span plenary" role="cell"><span class="kind">Plenary session</span><h3>Do Not Grow Weary</h3><span class="who">Jesse Arnds</span></div>
+
+        <div class="time" role="cell">5:30</div>
+        <div class="slot span meal" role="cell"><h3>Dinner</h3></div>
+      </div>
+      <p class="tt-note">All times Pacific.</p>
+    </div>
+  </section>
+
+  <section class="section" id="speakers">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Speakers</span>
+        <h2>Small-place pastors and ministry wives</h2>
+        <p>Every speaker serves, or has served, in a small place.</p>
+      </div>
+
+      <div class="plenary-speakers">
+        <article class="speaker-lg">
+          <img class="portrait" src="img/tony-arnds.png" alt="Tony Arnds">
+          <div>
+            <span class="eyebrow">Plenary · 9:00 am</span>
+            <h3>Tony Arnds</h3>
+            <p class="talk">The Glory of Ordinary Faithfulness</p>
+            <p class="bio">Tony worked on Montana ranches before coming to Christ, then studied at Montana Bible College and The Master’s Seminary. He pastored Potter Valley Bible Church from 2002 to 2020 and founded Folsom Bible Church.</p>
+          </div>
+        </article>
+        <article class="speaker-lg">
+          <div class="portrait" role="img" aria-label="Jesse Arnds">JA</div>
+          <div>
+            <span class="eyebrow">Plenary · 4:00 pm</span>
+            <h3>Jesse Arnds</h3>
+            <p class="talk">Do Not Grow Weary</p>
+            <p class="bio">Bio coming soon.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="speaker-grid">
+        <article class="speaker"><img class="portrait" src="img/drew-buell.jpg" alt="Drew Buell"><div><span class="tag">Men’s track</span><h3>Drew Buell</h3><p class="talk">Rethinking Assimilation</p></div></article>
+        <article class="speaker"><div class="portrait" role="img" aria-label="Max Vusik">MV</div><div><span class="tag">Men’s track</span><h3>Max Vusik</h3><p class="talk">Memorizing Large Portions of Scripture</p></div></article>
+        <article class="speaker"><div class="portrait" role="img" aria-label="Cliff Peppers">CP</div><div><span class="tag">Men’s track</span><h3>Cliff Peppers</h3><p class="talk">Ministering to Those With Disabilities</p></div></article>
+        <article class="speaker"><img class="portrait" src="img/tawny-arnds.jpg" alt="Tawny Arnds"><div><span class="tag">Women’s track</span><h3>Tawny Arnds</h3><p class="talk">Contentment in a Comparison Culture</p></div></article>
+        <article class="speaker"><img class="portrait" src="img/kerstin-fletcher.png" alt="Kerstin Fletcher"><div><span class="tag">Women’s track</span><h3>Kerstin Fletcher</h3><p class="talk">Faith and Suffering for the Long Haul</p></div></article>
+        <article class="speaker"><div class="portrait" role="img" aria-label="Lori Stover">LS</div><div><span class="tag">Women’s track</span><h3>Lori Stover</h3><p class="talk">The Tongue and the Heart</p></div></article>
+      </div>
+
+      <div class="worship"><span class="eyebrow">Leading worship</span><strong>Corey Milican &amp; Charles Brown</strong></div>
+    </div>
+  </section>
+
+  <section class="section journal-band" id="journal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The Small-Places Journal</span>
+        <h2>Articles from past speakers</h2>
+        <p>Essays drawn from earlier conference sessions, published on the conference Substack. New pieces appear here as they’re released.</p>
+      </div>
+      <!-- Shown until posts arrive. As articles are published, data/substack.json
+           fills the grid and replaces these cards (matched by title). -->
+      <div class="articles" id="articles">
+        <div class="article soon"><span class="by">Drew Buell</span><h3>The Inestimable Value of a Pastor’s Fellowship</h3><p>Of all the things pastors could invest their time in, few yield a greater return than fellowship with like-minded men.</p></div>
+        <div class="article soon"><span class="by">Tyler Masters</span><h3>Missions Is Not Surplus</h3><p>Why even the smallest churches cannot afford to wait on the Great Commission.</p></div>
+        <div class="article soon"><span class="by">Tawny Arnds</span><h3>Joy That Sings in the Dark</h3><p>Biblical joy is not a personality trait. It is a spiritual fruit that survives the worst suffering life can bring.</p></div>
+        <div class="article soon"><span class="by">Tony Arnds</span><h3>What Paul’s Prayers Taught a Grieving Pastor</h3><p>Paul prayed less about changing situations and more about strengthening the saints for them.</p></div>
+        <div class="article soon"><span class="by">Dave Witt</span><h3>Would You Marry a Stranger?</h3><p>The apostolic model for raising up pastors has never required a seminary. It requires a shepherd.</p></div>
+        <div class="article soon"><span class="by">Drew Buell</span><h3>How to Take a Sabbatical and Not Come Back Fired</h3><p>What twenty-three years of resistance and one summer on the river taught me about pastoral rest.</p></div>
+      </div>
+      <div class="journal-actions">
+        <a class="btn btn-primary" href="https://smallplaces.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack</a>
+        <a class="btn btn-ghost" href="https://smallplaces.substack.com/archive" target="_blank" rel="noopener">Read all articles</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="register">
+    <div class="wrap register">
+      <div class="price-card">
+        <span class="eyebrow">Registration</span>
+        <div class="price">$25 <small>per person</small></div>
+        <ul>
+          <li>Two plenary sessions and three breakout seminars</li>
+          <li>Continental breakfast, lunch, and dinner</li>
+          <li>Open to anyone</li>
+        </ul>
+        <a class="btn btn-primary" href="https://subsplash.com/coolcommunitychurch/lb/ev/+xmvn4n2/register" target="_blank" rel="noopener">Register now</a>
+        <p class="soon">Questions? Email Drew Buell at <span class="select">drew@coolchurch.org</span> or call the church office at <span class="select">530-885-4385</span>.</p>
+      </div>
+      <div>
+        <div class="section-head">
+          <span class="eyebrow">Questions</span>
+          <h2>Frequently asked</h2>
+        </div>
+        <details open><summary>Who can attend?</summary><p>Anyone. The conference is designed for pastors, ministry leaders, and their wives who serve in small places, and that includes small churches in big cities.</p></details>
+        <details><summary>Why a Wednesday?</summary><p>Many pastors set Saturday aside as a family day. We don’t want to ask you to give that up.</p></details>
+        <details><summary>Where should I stay?</summary><p>Auburn, about 15 minutes from the church, has the closest hotels. The Springhill Suites by Marriott is a good option.</p></details>
+        <details><summary>Will it be livestreamed?</summary><p>Yes. The plenary sessions will stream on the Cool Community Church Facebook page.</p></details>
+        <details><summary>Will the sessions be recorded?</summary><p>Yes. Audio is posted to the church podcast and website after the conference, and many sessions become articles in the Small-Places Journal.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section schedule-band" aria-labelledby="hosts-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Hosted by</span>
+        <h2 id="hosts-title">The Sierra Shepherds’ Fellowship</h2>
+        <p>A small group of pastors in the Northern California foothills, bound together by love for Christ, love for the church, and a commitment to expository preaching.</p>
+      </div>
+      <div class="hosts">
+        <div><h3>Sierra Shepherds’ Fellowship</h3><p>Sponsor and organizer of the conference.</p></div>
+        <div><h3>The Master’s Fellowship</h3><p>An association of pastors and missionaries bound by common affections and uncommon convictions.</p></div>
+        <div><h3>Coalition of Christ Exalting Churches</h3><p>Northern California churches united around the doctrines of grace and expository preaching.</p></div>
+        <div><h3>Cool Community Church</h3><p>Our host church, which exists to know Christ and make Christ known.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>The Small-Places Conference</strong>Cool Community Church · 863 Cave Valley Rd, Cool, CA</div>
+    <div><span class="select">drew@coolchurch.org</span> · <span class="select">530-885-4385</span></div>
+  </div>
+</footer>
+
+<script>
+// Small-Places Journal. data/substack.json is refreshed daily by
+// scripts/update-substack.ps1. Published posts come first; any planned
+// article not yet published keeps its "coming soon" card, up to six cards.
+(async function () {
+  const box = document.getElementById('articles');
+  const key = s => (s || '').toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\b(the|a|an|that)\b/g, '').replace(/\s+/g, ' ').trim();
+  const same = (a, b) => { a = key(a); b = key(b); return a && b && (a.includes(b) || b.includes(a) || a.slice(0, 16) === b.slice(0, 16)); };
+  try {
+    const res = await fetch('data/substack.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const posts = (await res.json()).posts || [];
+    if (!posts.length) return;
+    const fmt = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    const planned = [...box.querySelectorAll('.article.soon')];
+    // Posts go out under Drew's account, so a planned card's byline wins when titles match.
+    const plannedAuthor = t => { const el = planned.find(el => same(t, el.querySelector('h3').textContent)); return el && el.querySelector('.by').textContent; };
+    const cards = posts.slice(0, 6).map(p => {
+      const a = document.createElement('a');
+      a.className = 'article';
+      a.href = p.link; a.target = '_blank'; a.rel = 'noopener';
+      const add = (tag, cls, s) => { if (!s) return; const el = document.createElement(tag); if (cls) el.className = cls; el.textContent = s; a.append(el); };
+      add('span', 'by', plannedAuthor(p.title) || p.author);
+      add('h3', '', p.title);
+      add('p', '', p.subtitle);
+      add('span', 'date', p.date ? fmt.format(new Date(p.date)) : '');
+      return a;
+    });
+    const soon = planned
+      .filter(el => !posts.some(p => same(p.title, el.querySelector('h3').textContent)));
+    box.replaceChildren(...cards, ...soon.slice(0, Math.max(0, 6 - cards.length)));
+  } catch (e) { /* keep the planned cards */ }
+})();
+</script>
+</body>
+</html>
