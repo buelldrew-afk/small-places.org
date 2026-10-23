@@ -183,8 +183,8 @@ a { color: inherit; }
 .speaker .talk { font-size: 0.92rem; color: var(--ink-2); }
 .speaker .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
 .speaker .portrait { font-size: 1.4rem; }
-.worship { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; }
-.worship strong { font-family: var(--display); font-weight: 400; font-size: 1.3rem; }
+.worship { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; gap: 20px; }
+.worship .plenary-speakers { margin-bottom: 0; }
 @media (max-width: 900px) { .speaker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 720px) { .plenary-speakers { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .speaker-grid { grid-template-columns: 1fr; } .speaker-lg { grid-template-columns: 96px minmax(0, 1fr); } }
@@ -352,7 +352,7 @@ footer strong { color: var(--ink); font-family: var(--display); font-weight: 400
       <div class="section-head">
         <span class="eyebrow">Schedule</span>
         <h2>The day at a glance</h2>
-        <p>Worship led by Corey Milican and Charles Brown.</p>
+        <p>Worship led by Corey Millican and Charles Brown.</p>
       </div>
       <div class="timetable" role="table" aria-label="Conference schedule">
         <div class="tt-head" role="row"><span role="columnheader">Time</span><span role="columnheader">Men’s track</span><span role="columnheader">Women’s track</span></div>
@@ -429,7 +429,26 @@ footer strong { color: var(--ink); font-family: var(--display); font-weight: 400
         <article class="speaker"><div class="portrait" role="img" aria-label="Lori Stover">LS</div><div><span class="tag">Women’s track</span><h3>Lori Stover</h3><p class="talk">The Tongue and the Heart</p></div></article>
       </div>
 
-      <div class="worship"><span class="eyebrow">Leading worship</span><strong>Corey Milican &amp; Charles Brown</strong></div>
+      <div class="worship">
+        <span class="eyebrow">Leading worship</span>
+        <div class="plenary-speakers">
+          <article class="speaker-lg">
+            <div class="portrait" role="img" aria-label="Corey Millican">CM</div>
+            <div>
+              <h3>Corey Millican</h3>
+              <p class="talk">Pastor-Elder, Gold Country Baptist Church</p>
+              <p class="bio">Corey has served on the pastoral staff of Gold Country Baptist Church in Shingle Springs since 2018, after earlier serving as a youth pastor in Spokane. He holds an M.Div. from The Master’s Seminary. He and his wife, Laura, have four children. He loves acoustic music and roasting coffee.</p>
+            </div>
+          </article>
+          <article class="speaker-lg">
+            <div class="portrait" role="img" aria-label="Charles Brown">CB</div>
+            <div>
+              <h3>Charles Brown</h3>
+              <p class="bio">Bio coming soon.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
