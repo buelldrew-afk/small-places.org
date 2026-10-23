@@ -22,7 +22,9 @@ try {
     $wc.Headers.Add('User-Agent', 'small-places.org feed updater')
     [xml]$feed = $wc.DownloadString('https://smallplaces.substack.com/feed')
 
-    $posts = @($feed.rss.channel.item | Where-Object { $_ } | Select-Object -First 12 | ForEach-Object {
+    # Skip Substack's automatic "Coming soon" placeholder post.
+    $items = $feed.rss.channel.item | Where-Object { $_ -and "$($_.link)" -notmatch '/p/coming-soon$' }
+    $posts = @($items | Select-Object -First 12 | ForEach-Object {
         $img = ($_.enclosure | Where-Object { $_.type -like 'image/*' } | Select-Object -First 1).url
         [ordered]@{
             title    = "$($_.title.InnerText)".Trim()
